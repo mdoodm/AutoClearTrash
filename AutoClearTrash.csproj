@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- IL2CPP build for Schedule I 0.4.7f12 + MelonLoader 0.7.3 (net6).
+       Default GameDir = the r2modman profile. Override: dotnet build -c Release -p:GameDir="..." -->
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>AutoClearTrash</AssemblyName>
+    <RootNamespace>AutoClearTrash</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Version>1.0.0</Version>
+    <GameDir Condition="'$(GameDir)' == ''">C:\Users\Admin\AppData\Roaming\r2modmanPlus-local\ScheduleI\profiles\Default</GameDir>
+    <MLDir>$(GameDir)\MelonLoader\net6</MLDir>
+    <IlDir>$(GameDir)\MelonLoader\Il2CppAssemblies</IlDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MelonLoader"><HintPath>$(MLDir)\MelonLoader.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2CppInterop.Runtime"><HintPath>$(MLDir)\Il2CppInterop.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(IlDir)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2CppScheduleOne.Core"><HintPath>$(IlDir)\Il2CppScheduleOne.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2Cppmscorlib"><HintPath>$(IlDir)\Il2Cppmscorlib.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2CppFishNet.Runtime"><HintPath>$(IlDir)\Il2CppFishNet.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(IlDir)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>
